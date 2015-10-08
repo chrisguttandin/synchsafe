@@ -1,0 +1,11 @@
+{
+  "author": "Christoph Guttandin",
+  "description": "A simple module to decode and encode synchsafe integers.",
+  "license": "MIT",
+  "main": "src/module.js",
+  "name": "synchsafe",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "version": "0.0.0"
+}
