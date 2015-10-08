@@ -21,6 +21,6 @@ module.exports.decode = function decode(synchsafed) {
 /**
  * This functions turns a regular integer into synchronisation-saved one.
  */
-module.exports.encode = function decode(unsynchsafed) {
+module.exports.encode = function encode(unsynchsafed) {
     // @todo return synchsafed;
 };
