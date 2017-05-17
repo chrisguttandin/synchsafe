@@ -1,7 +1,5 @@
 # synchsafe
 
-[![Greenkeeper badge](https://badges.greenkeeper.io/chrisguttandin/synchsafe.svg)](https://greenkeeper.io/)
-
 **A simple module to decode and encode synchsafe integers.**
 
 [![tests](https://img.shields.io/travis/chrisguttandin/synchsafe/master.svg?style=flat-square)](https://travis-ci.org/chrisguttandin/synchsafe)
