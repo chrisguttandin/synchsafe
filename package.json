@@ -48,8 +48,10 @@
     "node": ">=6.10.3"
   },
   "files": [
-    "build/node/",
+    "build/es5/",
     "build/es2015/",
+    "build/esm/",
+    "build/node/",
     "src/"
   ],
   "homepage": "https://github.com/chrisguttandin/synchsafe",
