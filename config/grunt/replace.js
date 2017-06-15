@@ -1,9 +1,9 @@
 const execSync = require('child_process').execSync;
 
+// eslint-disable-next-line padding-line-between-statements
 const replaceNodeVersion = (grunt, match) => {
     try {
         const stdout = execSync(`curl --compressed --location --silent https://hub.docker.com/v2/repositories/library/node/tags/${ process.version.slice(1) }`);
-
         const tagName = JSON.parse(stdout.toString()).name;
 
         if (tagName === process.version.slice(1)) {
