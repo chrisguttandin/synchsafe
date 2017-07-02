@@ -1,6 +1,4 @@
 {
-    "env": {
-    },
     "extends": "eslint-config-holy-grail",
     "parserOptions": {
         "sourceType": "module"
