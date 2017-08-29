@@ -20,13 +20,14 @@ export const decode = (synchsafed: number) => {
 export const encode = (unsynchsafed: number) => {
     let mask = 0x7F;
     let synchsafed;
+    let unsynchsafedRest = unsynchsafed;
 
     while (mask ^ 0x7FFFFFFF) { // tslint:disable-line no-bitwise
-        synchsafed = unsynchsafed & ~mask; // tslint:disable-line no-bitwise
+        synchsafed = unsynchsafedRest & ~mask; // tslint:disable-line no-bitwise
         synchsafed <<= 1; // tslint:disable-line no-bitwise
-        synchsafed |= unsynchsafed & mask; // tslint:disable-line no-bitwise
+        synchsafed |= unsynchsafedRest & mask; // tslint:disable-line no-bitwise
         mask = ((mask + 1) << 8) - 1; // tslint:disable-line no-bitwise
-        unsynchsafed = synchsafed;
+        unsynchsafedRest = synchsafed;
     }
 
     return synchsafed;
