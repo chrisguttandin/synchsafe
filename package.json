@@ -11,7 +11,7 @@
   },
   "dependencies": {
     "babel-runtime": "^6.26.0",
-    "tslib": "^1.9.0"
+    "tslib": "^1.9.1"
   },
   "description": "A simple module to decode and encode synchsafe integers.",
   "devDependencies": {
