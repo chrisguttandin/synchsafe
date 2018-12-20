@@ -5,7 +5,7 @@ export const decode = (synchsafed: number) => {
     let mask = 0x7F000000;
     let unsynchsafed = 0;
 
-    while (mask) {
+    while (mask !== 0) {
         unsynchsafed >>= 1; // tslint:disable-line no-bitwise
         unsynchsafed |= synchsafed & mask; // tslint:disable-line no-bitwise
         mask >>= 8; // tslint:disable-line no-bitwise
@@ -22,7 +22,7 @@ export const encode = (unsynchsafed: number) => {
     let synchsafed;
     let unsynchsafedRest = unsynchsafed;
 
-    while (mask ^ 0x7FFFFFFF) { // tslint:disable-line no-bitwise
+    while ((mask ^ 0x7FFFFFFF) !== 0) { // tslint:disable-line no-bitwise
         synchsafed = unsynchsafedRest & ~mask; // tslint:disable-line no-bitwise
         synchsafed <<= 1; // tslint:disable-line no-bitwise
         synchsafed |= unsynchsafedRest & mask; // tslint:disable-line no-bitwise
