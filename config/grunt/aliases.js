@@ -1,3 +1,5 @@
+const { env } = require('process');
+
 module.exports = {
     build: [
         'clean:build',
@@ -12,7 +14,17 @@ module.exports = {
     ],
     test: [
         'build',
-        'karma:test',
-        'sh:test-unit'
+        ...([ 'chrome', 'firefox' ].includes(env.TARGET))
+            ? [
+                'karma:unit'
+            ]
+            : (env.TARGET === 'node')
+                ? [
+                    'sh:test-unit'
+                ]
+                : [
+                    'karma:unit',
+                    'sh:test-unit'
+                ]
     ]
 };

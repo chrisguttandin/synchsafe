@@ -44,10 +44,18 @@ module.exports = (config) => {
 
         config.set({
 
-            browsers: [
-                'ChromeSauceLabs',
-                'FirefoxSauceLabs'
-            ],
+            browsers: (env.TARGET === 'chrome')
+                ? [
+                    'ChromeSauceLabs'
+                ]
+                : (env.TARGET === 'firefox')
+                    ? [
+                        'FirefoxSauceLabs'
+                    ]
+                    : [
+                        'ChromeSauceLabs',
+                        'FirefoxSauceLabs'
+                    ],
 
             captureTimeout: 120000,
 

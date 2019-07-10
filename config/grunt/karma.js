@@ -1,6 +1,6 @@
 module.exports = {
-    test: {
-        configFile: 'config/karma/config.js',
+    unit: {
+        configFile: 'config/karma/unit.js',
         singleRun: true
     }
 };
