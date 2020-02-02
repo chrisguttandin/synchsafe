@@ -16,15 +16,15 @@ module.exports = {
         'build',
         ...([ 'chrome', 'firefox' ].includes(env.TARGET))
             ? [
-                'karma:unit'
+                'sh:test-unit-browser'
             ]
             : (env.TARGET === 'node')
                 ? [
-                    'sh:test-unit'
+                    'sh:test-unit-node'
                 ]
                 : [
-                    'karma:unit',
-                    'sh:test-unit'
+                    'sh:test-unit-browser',
+                    'sh:test-unit-node'
                 ]
     ]
 };
