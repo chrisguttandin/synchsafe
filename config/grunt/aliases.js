@@ -1,5 +1,9 @@
 const { env } = require('process');
 
+// eslint-disable-next-line padding-line-between-statements
+const filter = (predicate, ...tasks) => (predicate) ? tasks : [ ];
+const isTarget = (...targets) => (env.TARGET === undefined || targets.includes(env.TARGET));
+
 module.exports = {
     build: [
         'clean:build',
@@ -14,17 +18,7 @@ module.exports = {
     ],
     test: [
         'build',
-        ...([ 'chrome', 'firefox' ].includes(env.TARGET))
-            ? [
-                'sh:test-unit-browser'
-            ]
-            : (env.TARGET === 'node')
-                ? [
-                    'sh:test-unit-node'
-                ]
-                : [
-                    'sh:test-unit-browser',
-                    'sh:test-unit-node'
-                ]
+        ...filter(isTarget('chrome', 'firefox'), 'sh:test-unit-browser'),
+        ...filter(isTarget('node'), 'sh:test-unit-browser')
     ]
 };
