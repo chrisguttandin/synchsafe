@@ -1,19 +1,12 @@
 const { env } = require('process');
 
 module.exports = (config) => {
-
     config.set({
-
         basePath: '../../',
 
-        files: [
-            'test/unit/**/*.js'
-        ],
+        files: ['test/unit/**/*.js'],
 
-        frameworks: [
-            'mocha',
-            'sinon-chai'
-        ],
+        frameworks: ['mocha', 'sinon-chai'],
 
         preprocessors: {
             'test/unit/**/*.js': 'webpack'
@@ -22,40 +15,33 @@ module.exports = (config) => {
         webpack: {
             mode: 'development',
             module: {
-                rules: [ {
-                    test: /\.ts?$/,
-                    use: {
-                        loader: 'ts-loader'
+                rules: [
+                    {
+                        test: /\.ts?$/,
+                        use: {
+                            loader: 'ts-loader'
+                        }
                     }
-                } ]
+                ]
             },
             resolve: {
-                extensions: [ '.js', '.ts' ]
+                extensions: ['.js', '.ts']
             }
         },
 
         webpackMiddleware: {
             noInfo: true
         }
-
     });
 
     if (env.TRAVIS) {
-
         config.set({
-
-            browsers: (env.TARGET === 'chrome')
-                ? [
-                    'ChromeSauceLabs'
-                ]
-                : (env.TARGET === 'firefox')
-                    ? [
-                        'FirefoxSauceLabs'
-                    ]
-                    : [
-                        'ChromeSauceLabs',
-                        'FirefoxSauceLabs'
-                    ],
+            browsers:
+                env.TARGET === 'chrome'
+                    ? ['ChromeSauceLabs']
+                    : env.TARGET === 'firefox'
+                    ? ['FirefoxSauceLabs']
+                    : ['ChromeSauceLabs', 'FirefoxSauceLabs'],
 
             captureTimeout: 120000,
 
@@ -73,20 +59,10 @@ module.exports = (config) => {
             },
 
             tunnelIdentifier: env.TRAVIS_JOB_NUMBER
-
         });
-
     } else {
-
         config.set({
-
-            browsers: [
-                'ChromeCanaryHeadless',
-                'FirefoxDeveloperHeadless'
-            ]
-
+            browsers: ['ChromeCanaryHeadless', 'FirefoxDeveloperHeadless']
         });
-
     }
-
 };

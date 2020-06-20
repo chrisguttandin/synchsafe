@@ -2,7 +2,7 @@
  * This functions turns a synchronisation-saved integer into regular one.
  */
 export const decode = (synchsafed: number) => {
-    let mask = 0x7F000000;
+    let mask = 0x7f000000;
     let unsynchsafed = 0;
 
     while (mask !== 0) {
@@ -18,11 +18,12 @@ export const decode = (synchsafed: number) => {
  * This functions turns a regular integer into synchronisation-saved one.
  */
 export const encode = (unsynchsafed: number) => {
-    let mask = 0x7F;
+    let mask = 0x7f;
     let synchsafed;
     let unsynchsafedRest = unsynchsafed;
 
-    while ((mask ^ 0x7FFFFFFF) !== 0) { // tslint:disable-line no-bitwise
+    // tslint:disable-next-line:no-bitwise
+    while ((mask ^ 0x7fffffff) !== 0) {
         synchsafed = unsynchsafedRest & ~mask; // tslint:disable-line no-bitwise
         synchsafed <<= 1; // tslint:disable-line no-bitwise
         synchsafed |= unsynchsafedRest & mask; // tslint:disable-line no-bitwise
