@@ -2,7 +2,6 @@
 
 **A simple module to decode and encode synchsafe integers.**
 
-[![tests](https://img.shields.io/travis/chrisguttandin/synchsafe/master.svg?style=flat-square)](https://travis-ci.org/chrisguttandin/synchsafe)
 [![dependencies](https://img.shields.io/david/chrisguttandin/synchsafe.svg?style=flat-square)](https://www.npmjs.com/package/synchsafe)
 [![version](https://img.shields.io/npm/v/synchsafe.svg?style=flat-square)](https://www.npmjs.com/package/synchsafe)
 
