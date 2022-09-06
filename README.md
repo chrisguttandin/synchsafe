@@ -4,9 +4,7 @@
 
 [![version](https://img.shields.io/npm/v/synchsafe.svg?style=flat-square)](https://www.npmjs.com/package/synchsafe)
 
-This module provides two functions to decode and encode synchsafe integers as it is for example
-required by the [ID3 standard](http://id3.org/id3v2.4.0-structure). It is basically a fork of this
-[Gist](https://gist.github.com/raym/7b8cb7b838c94cada0b7) by [raym](https://github.com/raym).
+This module provides two functions to decode and encode synchsafe integers as it is for example required by the [ID3 standard](http://id3.org/id3v2.4.0-structure). It is a fork of this [Gist](https://gist.github.com/raym/7b8cb7b838c94cada0b7) by [raym](https://github.com/raym).
 
 ## Usage
 
