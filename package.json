@@ -13,7 +13,7 @@
         "@babel/runtime": "^7.18.9",
         "tslib": "^2.4.0"
     },
-    "description": "A simple module to decode and encode synchsafe integers.",
+    "description": "A module to decode and encode synchsafe integers.",
     "devDependencies": {
         "@babel/cli": "^7.18.10",
         "@babel/core": "^7.18.13",

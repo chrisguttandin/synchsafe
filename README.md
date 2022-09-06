@@ -1,6 +1,6 @@
 # synchsafe
 
-**A simple module to decode and encode synchsafe integers.**
+**A module to decode and encode synchsafe integers.**
 
 [![version](https://img.shields.io/npm/v/synchsafe.svg?style=flat-square)](https://www.npmjs.com/package/synchsafe)
 
