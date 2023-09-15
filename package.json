@@ -11,11 +11,12 @@
     },
     "dependencies": {
         "@babel/runtime": "^7.22.6",
+        "linked": "^0.2.0",
         "tslib": "^2.6.1"
     },
     "description": "A module to decode and encode synchsafe integers.",
     "devDependencies": {
-        "@babel/cli": "^7.22.9",
+        "@babel/cli": "^7.22.15",
         "@babel/core": "^7.22.9",
         "@babel/plugin-external-helpers": "^7.22.5",
         "@babel/plugin-transform-runtime": "^7.22.9",
