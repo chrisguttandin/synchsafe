@@ -1,15 +1,20 @@
 import { decode, encode } from '../../src/module';
 
 describe('synchsafe', () => {
-    describe('decode()', () => {
-        it('should decode a number', () => {
-            expect(decode(30000)).to.equal(15024);
+    for (const [x, y] of [
+        [30000, 15024],
+        [459008, 114816]
+    ]) {
+        describe(`decode(${x})`, () => {
+            it(`should return ${y}`, () => {
+                expect(decode(x)).to.equal(y);
+            });
         });
-    });
 
-    describe('encode()', () => {
-        it('should encode a number', () => {
-            expect(encode(15024)).to.equal(30000);
+        describe(`encode(${y})`, () => {
+            it(`should return ${x}`, () => {
+                expect(encode(y)).to.equal(x);
+            });
         });
-    });
+    }
 });
