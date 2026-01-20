@@ -1,4 +1,5 @@
 import { decode, encode } from '../../src/module';
+import { describe, expect, it } from 'vitest';
 
 describe('synchsafe', () => {
     for (const [x, y] of [
